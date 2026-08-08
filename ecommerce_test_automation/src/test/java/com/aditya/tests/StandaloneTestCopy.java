@@ -1,4 +1,4 @@
-package com.aditya;
+package com.aditya.tests;
 
 import java.io.IOException;
 
@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
 import com.aditya.pageobjects.CartPage;
 import com.aditya.pageobjects.CheckoutPage;
 import com.aditya.pageobjects.ConfirmationPage;
-import com.aditya.pageobjects.LandingPage;
 import com.aditya.pageobjects.ProductCatalogue;
 import com.aditya.testcomponents.BaseTest;
 
@@ -18,9 +17,6 @@ public class StandaloneTestCopy extends BaseTest {
     public void submitOredr() throws InterruptedException, IOException {
         String productName = "ZARA COAT 3";
 
-        LandingPage landingPage = launchApplication();
-
-        landingPage.gotTo();
 
         ProductCatalogue productCatalogue = landingPage.loginApplication("aditya@email.com", "Aditya@123");
 
@@ -42,7 +38,6 @@ public class StandaloneTestCopy extends BaseTest {
 
         Assert.assertTrue(confirmMessage.equalsIgnoreCase("THANKYOU FOR THE ORDER."));
 
-        driver.close();
 
     }
 }
