@@ -2,13 +2,10 @@ package com.aditya.abstractcomponents;
 
 import java.time.Duration;
 
-import org.jspecify.annotations.NonNull;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import com.aditya.pageobjects.CartPage;
 
 public class AbstractComponent {
     WebDriver driver;
@@ -23,7 +20,7 @@ public class AbstractComponent {
 
     }
 
-   public <T> T goToPage(String pageName, Class<T> pageClass) {
+    public <T> T goToPage(String pageName, Class<T> pageClass) {
     driver.findElement(
         By.cssSelector(String.format("[routerLink*='%s']", pageName))
     ).click();
